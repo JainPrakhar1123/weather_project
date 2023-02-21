@@ -68,4 +68,14 @@ cityForm.addEventListener('submit',e=>{
     .then(data=>updateUI(data))
     // .then(data=>console.log(data))
     .catch(err=>console.log(err));
+
+
+    //set local storage
+    localStorage.setItem('cities',city);
 });
+
+if(localStorage.getItem('cities')){
+    updateCity(localStorage.getItem('cities'))
+    .then(data=>updateUI(data))
+    .catch(err=>console.log(err));
+}
